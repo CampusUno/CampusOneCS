@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.show-on-mob-only {
+  visibility: hidden;
+}
+@media (max-width: 600px) {
+  .show-on-mob-only {
+    visibility: initial;
+  }
+}
+
+html, body {
+  background-color: #100F0F;
+  font-size: 16px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  border: none;
+  outline: none;
+  font-size: 1.15rem;
+  font-weight: 200;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+
+p {
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 1.4rem; /* 1.92rem */
+  max-width: 70%;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  padding: 1rem 2rem;
+  background: rgba(217, 217, 217, 0.1);
+  border-radius: 2rem;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  width: auto;
+  box-sizing: unset;
+  display: flex;
+  justify-content: space-between;
+  transition: 500ms background-color linear;
+}
+@media (max-width: 600px) {
+  .btn-primary {
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+  }
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #4D041B, #940432);
+}
+
+.btn-secondary {
+  font-size: 1.25rem;
+  padding-block: 1rem;
+  color: #fff;
+  cursor: pointer;
+  width: auto;
+}
+@media (max-width: 600px) {
+  .btn-secondary {
+    font-size: 1rem;
+  }
+}
+
+.btn-secondary::after {
+  content: "";
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  height: 1px;
+  margin-top: 0.5rem;
+  background-color: #fff;
+}
+
+h1, h2, h3 {
+  font-family: 700;
+}
+
+.logo span {
+  color: #940432;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 2.5rem;
+  position: relative;
+  z-index: 100;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 5.25rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  nav ul {
+    gap: 3.25rem;
+  }
+}
+@media (max-width: 600px) {
+  nav ul li:nth-child(1), nav ul li:nth-child(2) {
+    display: none;
+  }
+}
+
+.special {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 20rem;
+  color: #fff;
+  opacity: 0.75%;
+  overflow-x: hidden;
+  word-break: keep-all;
+  word-wrap: normal;
+}
+
+.capsule {
+  display: block !important;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 200;
+  background: linear-gradient(90deg, #4D041B, #940432);
+  line-height: normal;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1.first {
+  position: absolute;
+  left: -10%;
+  top: 3%;
+}
+
+.hero {
+  display: flex;
+  margin-top: 8rem;
+  margin-left: 10%;
+}
+@media (max-width: 600px) {
+  .hero {
+    margin-left: 5%;
+  }
+}
+.hero .left .capsule {
+  margin-bottom: 2rem;
+}
+.hero .left h1 {
+  margin-bottom: 1.5rem;
+}
+.hero .left p {
+  margin-bottom: 4rem;
+}
+.hero .left .subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hero .left input {
+  border: 0.75px rgba(255, 255, 255, 0.25) solid !important;
+  border-radius: 4rem;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  max-width: 60%;
+  color: #fff;
+  box-sizing: unset;
+}
+.hero .left button {
+  max-width: 60%;
+}
+.hero .right {
+  width: 60%;
+}
+.hero .right img {
+  width: 100%;
+  max-height: 100vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=styles.css.map */

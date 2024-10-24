@@ -1,0 +1,53 @@
+@import '_basic';
+
+h1.first{
+    position: absolute;
+    left: -10%;
+    top: 3%;
+}
+
+.hero{
+    display: flex;
+    margin-top: 8rem;
+    margin-left: 10%;
+    @include mobile{
+        margin-left: 5%;
+    }
+
+    .left{
+        .capsule{
+            margin-bottom: 2rem;
+        }
+        h1{
+            margin-bottom: 1.5rem;
+        }
+        p{
+            margin-bottom: 4rem;
+        }
+        .subscribe{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input{
+            border: 0.75px rgba($color: #fff, $alpha: 0.25) solid !important;
+            border-radius: 4rem;
+            background-color: transparent;
+            padding: 1rem 2rem;
+            max-width: 60%;
+            color: #fff;
+            box-sizing: unset; //This is allowing to get the desired width
+        }
+        button{
+            max-width: 60%;
+        }
+    }
+    .right{
+        width: 60%;
+        img{
+            width: 100%;
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+}

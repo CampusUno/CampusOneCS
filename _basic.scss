@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$background: #100F0F;
+$primary-light: #940432;
+$primary-dark: #4D041B;
+$accent: #F8C017;
+$card: #242424;
+
+$mobile: 600px;
+$tablet-min: 600px;
+$tablet-max: 1100px;
+
+@mixin mobile{
+    @media (max-width: #{$mobile}){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max){
+        @content;
+    }
+}
+
+.show-on-mob-only{
+    visibility: hidden;
+    @include mobile{
+        visibility: initial;
+    }
+}
+
+
+html, body{
+    background-color: $background;
+    font-size: 16px;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+a{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    border: none;
+    outline: none;
+    font-size: 1.15rem;
+    font-weight: 200;
+}
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+
+    @include mobile{
+        width: 90%;
+    }
+}
+
+p{
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 1.4rem; /* 1.92rem */
+    max-width: 70%;
+}
+
+button{
+    border: none;
+    outline: none;
+}
+
+.btn-primary{
+    padding: 1rem 2rem;
+    background: rgba($color: #D9D9D9, $alpha: 0.1);
+    border-radius: 2rem;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    width: auto;
+    box-sizing: unset;
+    display: flex;
+    justify-content: space-between;
+    transition: 500ms background-color linear;
+    @include mobile{
+        padding: 0.5rem 1.25rem;
+        font-size: 1rem;
+    }
+    &:hover{
+        background: linear-gradient(90deg, $primary-dark, $primary-light);
+        
+    }
+}
+
+.btn-secondary{
+    font-size: 1.25rem;
+    padding-block: 1rem;
+    color: #fff;
+    cursor: pointer;
+    width: auto;
+    // box-sizing: unset;
+    @include mobile{
+        font-size: 1rem;
+    }
+}
+.btn-secondary::after{
+    content: '';
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 1px;
+    margin-top: 0.5rem;
+    background-color: #fff;
+}
+
+h1, h2, h3{
+    font-family: 700;
+}
+
+.logo{
+    span{
+        color: $primary-light;
+    }
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 2.5rem;
+    position: relative;
+    z-index: 100;
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 5.25rem;
+        @include tablet{
+            gap: 3.25rem;
+        }
+        @include mobile{
+            li:nth-child(1),li:nth-child(2){
+                display: none;
+            }
+        }
+    }
+}
+
+.special{
+    font-weight: 200;
+    font-style: italic;
+    font-size: 20rem;
+    color: #fff;
+    opacity: 0.75%;
+    overflow-x: hidden;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+.capsule{
+    display: block !important;
+    width: fit-content;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-style: italic;
+    font-weight: 200;
+    background: linear-gradient(90deg, $primary-dark, $primary-light);
+    line-height: normal;
+}
+
+h1{
+    font-size: 2rem;
+}
