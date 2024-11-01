@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus One Coming Soon</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,29 +26,94 @@
             <p class="capsule">Coming Soon!</p>
             <h1>The GCET Virtual Community</h1>
             <p>Explore and engage with students of the college and spark interesting and productive conversations.</p>
-            <div class="subscribe">
-                <input type="email" name="email" id="email" placeholder="Your email address">
-                <button class="btn-primary">
+            <form class="subscribe" id="form">
+                <input type="email" name="email" id="email" placeholder="Your college email address" required>
+                <button class="btn-primary" type="submit" id="submit">
                     Get notified about the launch
                     <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 7.5L17 7.5M17 7.5L11 14M17 7.5L11 0.999999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>                        
                 </button>    
-            </div>
+            </from>
         </div>
         <div class="right">
             <img src="./assets/hero-img.png" alt="campus One Home Page">
+            TODO: Create a new branch and try parallax with bg-attachment-fixed
         </div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxAuD_U32SrAKyabPmA_ez2y5OaUfu2NEkVKouFZ7yvWSyK6L42EFF60djfFh9MudSh/exec'
-            const form = document.forms['submit-to-google-sheet']
+
+            // Script to collect email list
+
+            const form = document.querySelector("#form")
+            const input = document.querySelector("#email")
+            const submitButton = document.querySelector("#submit")
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxzKPZET7DIsqWAQLohCNeGHPHOEfI57Ea-NVp3AkXKTNJ3s9Nz8ZNh3a4aFQkvkrlc/exec'
 
             form.addEventListener('submit', e => {
+                const inputValue = input.value
+                
+                console.log(inputValue)
+                console.log(!inputValue.endsWith("galgotiacollege.edu"))
+                
+                submitButton.disabled = true
+                submitButton.innerHTML = "Submitting..."
+
                 e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                    .then(response => console.log('Success!', response))
-                    .catch(error => console.error('Error!', error.message))
+
+                if(!inputValue.endsWith("galgotiacollege.edu")){
+
+                    submitButton.disabled = false
+
+                    Toastify({
+                        text: "Please use only your college email ID",
+                        duration: 3000,
+                        gravity: "bottom",
+                        style: {
+                            background: "linear-gradient(to right, #4D041B, #940432)",
+                            boxshadow: "none"
+                        },
+                    }).showToast();
+
+                    submitButton.innerHTML = `
+                                                Get notified about the launch
+                                                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 7.5L17 7.5M17 7.5L11 14M17 7.5L11 0.999999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>   
+                                            `
+                    form.reset();
+                    return;
+                }
+
+                let requestBody = new FormData(form)
+
+                fetch(scriptURL, { method: 'POST', body: requestBody})
+                .then(response => {
+                    submitButton.innerHTML = `
+                                                Get notified about the launch
+                                                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 7.5L17 7.5M17 7.5L11 14M17 7.5L11 0.999999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>   
+                                            `
+                    Toastify({
+                        text: "Congrats! You will be notified soon!",
+                        duration: 3000,
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        },
+                    }).showToast();
+                    submitButton.disabled = false
+                    form.reset();
+
+                })
+                .catch(error => {
+                    alert('Error!', error.message)
+                    submitButton.disabled = false
+                    form.reset();
+                })
             })
+
         </script>
     </section>
 </body>
