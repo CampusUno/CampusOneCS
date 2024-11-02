@@ -166,6 +166,9 @@ nav{
     word-break: keep-all;
     word-wrap: normal;
     cursor: default;
+    @include mobile{
+        font-size: 14rem;
+    }
 }
 
 .capsule{
@@ -182,4 +185,8 @@ nav{
 
 h1{
     font-size: 2rem;
+}
+
+.text-red{
+    color: $primary-light;
 }

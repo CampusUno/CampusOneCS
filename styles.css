@@ -149,6 +149,11 @@ nav ul {
   word-wrap: normal;
   cursor: default;
 }
+@media (max-width: 600px) {
+  .special {
+    font-size: 14rem;
+  }
+}
 
 .capsule {
   display: block !important;
@@ -165,6 +170,10 @@ nav ul {
 
 h1 {
   font-size: 2rem;
+}
+
+.text-red {
+  color: #940432;
 }
 
 h1.first {
@@ -217,4 +226,45 @@ h1.first {
   max-height: 100vh;
   -o-object-fit: contain;
      object-fit: contain;
+  margin-top: -2rem;
+}
+
+.intro {
+  padding-block: 20rem;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .intro {
+    padding-block: 14rem;
+  }
+}
+.intro h2 {
+  width: 50%;
+  font-style: italic;
+  font-size: 2rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .intro h2 {
+    font-size: 1.5rem;
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  .intro h2 {
+    font-size: 1.25rem;
+    width: 80%;
+  }
+}
+
+h1.second {
+  position: absolute;
+  left: 5%;
+}
+@media (max-width: 600px) {
+  h1.second {
+    margin-top: 60%;
+    left: -20%;
+    font-size: 10rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

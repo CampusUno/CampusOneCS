@@ -7,10 +7,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbxzKPZET7DIsqWAQLohCN
 
 form.addEventListener('submit', e => {
     const inputValue = input.value
-    
-    console.log(inputValue)
-    console.log(!inputValue.endsWith("galgotiacollege.edu"))
-    
+        
     submitButton.disabled = true
     submitButton.innerHTML = "Submitting..."
 
