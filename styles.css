@@ -517,4 +517,108 @@ h1.second {
     margin-top: 3rem;
     margin-right: 2rem;
   }
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40vh;
+}
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+  }
+}
+.profile h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .profile h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .profile h3 {
+    font-size: 1.25rem;
+    width: 80%;
+  }
+}
+.profile .text, .profile img, .profile .more {
+  width: 33%;
+}
+@media (max-width: 600px) {
+  .profile .text, .profile img, .profile .more {
+    width: 100%;
+  }
+}
+.profile .text {
+  padding-left: 2rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .profile .text {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .profile .text {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .profile .text h3 {
+    display: block;
+    width: 100%;
+  }
+}
+.profile .text p {
+  width: 110%;
+  display: inline;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .profile .text p {
+    font-size: 0.75rem;
+    width: 100%;
+    display: inline;
+  }
+}
+@media (max-width: 600px) {
+  .profile .text p {
+    font-size: 0.75rem;
+    width: 80% !important;
+    display: block;
+  }
+}
+.profile img {
+  height: 60vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .profile img {
+    padding-right: 1rem;
+  }
+}
+.profile .more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile .more p {
+  margin-bottom: 1rem;
+}
+.profile .more .capsule:nth-child(3) {
+  margin-left: 5rem !important;
+}
+.profile .more .capsule:nth-child(4) {
+  margin-right: 3rem !important;
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=styles.css.map */
