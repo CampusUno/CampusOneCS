@@ -111,6 +111,7 @@ button{
     cursor: pointer;
     width: auto;
     // box-sizing: unset;
+    text-wrap: nowrap;
     @include mobile{
         font-size: 1rem;
     }
@@ -143,7 +144,6 @@ nav{
     z-index: 100;
     ul{
         display: flex;
-        list-style: none;
         gap: 5.25rem;
         @include tablet{
             gap: 3.25rem;
@@ -156,13 +156,17 @@ nav{
     }
 }
 
+ul{
+    list-style: none;
+}
+
 .special{
     font-weight: 200;
     font-style: italic;
     font-size: 20rem;
     color: #fff;
     opacity: 0.75%;
-    overflow-x: hidden;
+    overflow: hidden;
     word-break: keep-all;
     word-wrap: normal;
     cursor: default;

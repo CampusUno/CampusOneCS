@@ -90,6 +90,7 @@ button {
   color: #fff;
   cursor: pointer;
   width: auto;
+  text-wrap: nowrap;
 }
 @media (max-width: 600px) {
   .btn-secondary {
@@ -124,7 +125,6 @@ nav {
 }
 nav ul {
   display: flex;
-  list-style: none;
   gap: 5.25rem;
 }
 @media screen and (min-width: 600px) and (max-width: 1100px) {
@@ -138,13 +138,17 @@ nav ul {
   }
 }
 
+ul {
+  list-style: none;
+}
+
 .special {
   font-weight: 200;
   font-style: italic;
   font-size: 20rem;
   color: #fff;
   opacity: 0.75%;
-  overflow-x: hidden;
+  overflow: hidden;
   word-break: keep-all;
   word-wrap: normal;
   cursor: default;
@@ -286,7 +290,7 @@ h1.second {
   #features .row {
     gap: 1.5rem;
     margin-left: 0rem;
-    margin-bottom: 35vh;
+    margin-bottom: 25vh;
   }
 }
 @media (max-width: 600px) {
@@ -523,7 +527,12 @@ h1.second {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40vh;
+  margin-bottom: 20vh;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .profile {
+    margin-bottom: 5vh;
+  }
 }
 @media (max-width: 600px) {
   .profile {
@@ -621,4 +630,38 @@ h1.second {
 .profile .more .capsule:nth-child(4) {
   margin-right: 3rem !important;
   margin-bottom: 2rem;
+}
+
+#footer footer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 3rem;
+}
+@media (max-width: 600px) {
+  #footer footer {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+#footer footer .footnotes h3 {
+  padding-bottom: 1rem;
+}
+#footer footer .footnotes p {
+  font-size: 1rem;
+  width: 90% !important;
+}
+@media (max-width: 600px) {
+  #footer footer .footnotes p {
+    width: 90% !important;
+    max-width: 90% !important;
+  }
+}
+#footer footer .links {
+  display: flex;
+  gap: 4rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  #footer footer .links {
+    gap: 1rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

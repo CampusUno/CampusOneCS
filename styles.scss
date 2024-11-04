@@ -100,7 +100,7 @@ h1.second{
         @include tablet{
             gap: 1.5rem;
             margin-left: 0rem;
-            margin-bottom: 35vh;
+            margin-bottom: 25vh;
         }
         @include mobile{
             flex-direction: column;
@@ -292,7 +292,10 @@ h1.second{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40vh;
+    margin-bottom: 20vh;
+    @include tablet{
+        margin-bottom: 5vh;
+    }
     @include mobile{
         flex-direction: column;
         gap: 4rem;
@@ -370,6 +373,38 @@ h1.second{
         .capsule:nth-child(4){
             margin-right: 3rem!important;
             margin-bottom: 2rem;
+        }
+    }
+}
+
+#footer{
+    footer{
+        display: flex;
+        justify-content: space-between;
+        padding-block: 3rem;
+        @include mobile{
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        .footnotes{
+            h3{
+                padding-bottom: 1rem;
+            }
+            p{
+                font-size: 1rem;
+                width: 90% !important;
+                @include mobile{
+                    width: 90% !important;
+                    max-width: 90% !important;
+                }
+            }
+        }
+        .links{
+            display: flex;
+            gap: 4rem;
+            @include tablet{
+                gap: 1rem;
+            }
         }
     }
 }
