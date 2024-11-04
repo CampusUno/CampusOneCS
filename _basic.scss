@@ -170,6 +170,7 @@ ul{
     word-break: keep-all;
     word-wrap: normal;
     cursor: default;
+    width: 100vw; //Fix the overflow scroll issue
     @include mobile{
         font-size: 14rem;
         overflow: hidden;

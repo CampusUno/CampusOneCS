@@ -152,6 +152,7 @@ ul {
   word-break: keep-all;
   word-wrap: normal;
   cursor: default;
+  width: 100vw;
 }
 @media (max-width: 600px) {
   .special {
