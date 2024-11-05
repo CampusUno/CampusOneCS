@@ -74,12 +74,6 @@ button {
   justify-content: space-between;
   transition: 500ms background-color linear;
 }
-@media (max-width: 600px) {
-  .btn-primary {
-    padding: 0.5rem 1.25rem;
-    font-size: 1rem;
-  }
-}
 .btn-primary:hover {
   background: linear-gradient(90deg, #4D041B, #940432);
 }
@@ -196,6 +190,19 @@ h1.first {
 @media (max-width: 600px) {
   .hero {
     margin-left: 5%;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .hero .left {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .hero .left {
+    width: 95%;
   }
 }
 .hero .left .capsule {
@@ -204,8 +211,20 @@ h1.first {
 .hero .left h1 {
   margin-bottom: 1.5rem;
 }
-.hero .left p {
+.hero .left .para {
   margin-bottom: 4rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .hero .left .para {
+    margin-bottom: 2.5rem;
+    width: 90%;
+    max-width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .hero .left .para {
+    margin-bottom: 2.5rem;
+  }
 }
 .hero .left .subscribe {
   display: flex;
@@ -221,11 +240,36 @@ h1.first {
   color: #fff;
   box-sizing: unset;
 }
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .hero .left input {
+    max-width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  .hero .left input {
+    max-width: 80%;
+  }
+}
 .hero .left button {
   max-width: 60%;
 }
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .hero .left button {
+    max-width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  .hero .left button {
+    max-width: 80%;
+  }
+}
 .hero .right {
   width: 60%;
+}
+@media (max-width: 600px) {
+  .hero .right {
+    width: 95%;
+  }
 }
 .hero .right img {
   width: 100%;
@@ -233,6 +277,16 @@ h1.first {
   -o-object-fit: contain;
      object-fit: contain;
   margin-top: -2rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .hero .right img {
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero .right img {
+    margin-top: 1.5rem;
+  }
 }
 
 .intro {

@@ -10,19 +10,39 @@ h1.first{
     display: flex;
     margin-top: 8rem;
     margin-left: 10%;
+    @include tablet{
+        //margin-left: 5%;
+    }
     @include mobile{
         margin-left: 5%;
+        flex-direction: column;
+        margin-top: 4rem;
+        gap: 2rem;
     }
 
     .left{
+        @include tablet{
+            width: 50%;
+        }
+        @include mobile{
+            width: 95%;
+        }
         .capsule{
             margin-bottom: 2rem;
         }
         h1{
             margin-bottom: 1.5rem;
         }
-        p{
+        .para{
             margin-bottom: 4rem;
+            @include tablet{
+                margin-bottom: 2.5rem;
+                width: 90%;
+                max-width: 90%;
+            }
+            @include mobile{
+                margin-bottom: 2.5rem;
+            }
         }
         .subscribe{
             display: flex;
@@ -37,18 +57,39 @@ h1.first{
             max-width: 60%;
             color: #fff;
             box-sizing: unset; //This is allowing to get the desired width
+            @include tablet{
+                max-width: 80%;
+            }
+            @include mobile{
+                max-width: 80%;
+            }
         }
         button{
             max-width: 60%;
+            @include tablet{
+                max-width: 80%;
+            }
+            @include mobile{
+                max-width: 80%;
+            }
         }
     }
     .right{
         width: 60%;
+        @include mobile{
+            width: 95%;
+        }
         img{
             width: 100%;
             max-height: 100vh;
             object-fit: contain;
             margin-top: -2rem;
+            @include tablet{
+                margin-left: 2rem;
+            }
+            @include mobile{
+                margin-top: 1.5rem;
+            }
         }
     }
 }

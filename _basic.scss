@@ -94,10 +94,6 @@ button{
     display: flex;
     justify-content: space-between;
     transition: 500ms background-color linear;
-    @include mobile{
-        padding: 0.5rem 1.25rem;
-        font-size: 1rem;
-    }
     &:hover{
         background: linear-gradient(90deg, $primary-dark, $primary-light);
         
