@@ -433,6 +433,13 @@ h1.second{
         .footnotes{
             h3{
                 padding-bottom: 1rem;
+                a{
+                    font-weight: 700 !important;
+                    &:hover{
+                        text-decoration: underline;
+                        color: $primary-light;
+                    }
+                }
             }
             p{
                 font-size: 1rem;

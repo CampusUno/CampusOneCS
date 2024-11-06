@@ -704,6 +704,13 @@ h1.second {
 #footer footer .footnotes h3 {
   padding-bottom: 1rem;
 }
+#footer footer .footnotes h3 a {
+  font-weight: 700 !important;
+}
+#footer footer .footnotes h3 a:hover {
+  text-decoration: underline;
+  color: #940432;
+}
 #footer footer .footnotes p {
   font-size: 1rem;
   width: 90% !important;
