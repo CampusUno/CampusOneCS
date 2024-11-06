@@ -2,7 +2,7 @@
 
 h1.first{
     position: absolute;
-    left: -10%;
+    left: 0%;
     top: 3%;
 }
 
@@ -103,6 +103,7 @@ h1.first{
     padding-bottom: 10rem;
     @include mobile{
         padding-block: 14rem;
+        padding-bottom: 2rem !important;
     }
     .flex{
         display: flex;
@@ -144,7 +145,7 @@ h1.second{
         gap: 8rem;
         align-items: center;
         margin-left: 4rem;
-        margin-bottom: 50vh;
+        margin-bottom: 40vh;
         @include tablet{
             gap: 1.5rem;
             margin-left: 0rem;
@@ -153,7 +154,7 @@ h1.second{
         @include mobile{
             flex-direction: column;
             margin-left: 0rem;
-            margin-top: 20vh;
+            margin-top: 10vh;
             margin-bottom: 30vh;
         }
         .img-stack{
@@ -348,6 +349,7 @@ h1.second{
         flex-direction: column;
         gap: 4rem;
         text-align: center;
+        margin-bottom: 10vh;
     }
     h3{
         font-size: 1.5rem;
