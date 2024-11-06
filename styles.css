@@ -176,6 +176,10 @@ h1 {
   color: #940432;
 }
 
+.toastify {
+  box-shadow: none !important;
+}
+
 h1.first {
   position: absolute;
   left: -10%;

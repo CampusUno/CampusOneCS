@@ -67,6 +67,7 @@ form.addEventListener('submit', e => {
                 text: "Congrats! You will be notified soon!",
                 duration: 3000,
                 className: "toastify-center",
+                gravity: "bottom",
                 style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 },
@@ -76,6 +77,7 @@ form.addEventListener('submit', e => {
             Toastify({
                 text: "Congrats! You will be notified soon!",
                 duration: 3000,
+                gravity: "bottom",
                 style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 },
