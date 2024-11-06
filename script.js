@@ -2,12 +2,13 @@ const form = document.querySelector("#form")
 const input = document.querySelector("#email")
 const submitButton = document.querySelector("#submit")
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxzKPZET7DIsqWAQLohCNeGHPHOEfI57Ea-NVp3AkXKTNJ3s9Nz8ZNh3a4aFQkvkrlc/exec'
+const width = document.body.clientWidth;
+const mobile = 600
 
 // Script to collect email list
 
 form.addEventListener('submit', e => {
     const inputValue = input.value
-        
     submitButton.disabled = true
     submitButton.innerHTML = "Submitting..."
 
@@ -17,14 +18,29 @@ form.addEventListener('submit', e => {
 
         submitButton.disabled = false
 
-        Toastify({
-            text: "Please use only your college email ID",
-            duration: 3000,
-            gravity: "bottom",
-            style: {
-                background: "linear-gradient(to right, #4D041B, #940432)",
-            },
-        }).showToast();
+
+        if(width<mobile){
+            Toastify({
+                text: "Please use only your college email ID",
+                duration: 3000,
+                gravity: "bottom",
+                className: "toastify-center",
+                style: {
+                    background: "linear-gradient(to right, #4D041B, #940432)",
+                },
+            }).showToast();
+        }
+        else{
+            Toastify({
+                text: "Please use only your college email ID",
+                duration: 3000,
+                gravity: "bottom",
+                style: {
+                    background: "linear-gradient(to right, #4D041B, #940432)",
+                },
+            }).showToast();
+        }
+        
 
         submitButton.innerHTML = `
                                     Get notified about the launch
@@ -46,13 +62,26 @@ form.addEventListener('submit', e => {
                                         <path d="M1 7.5L17 7.5M17 7.5L11 14M17 7.5L11 0.999999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>   
                                 `
-        Toastify({
-            text: "Congrats! You will be notified soon!",
-            duration: 3000,
-            style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-        }).showToast();
+        if(width<mobile){
+            Toastify({
+                text: "Congrats! You will be notified soon!",
+                duration: 3000,
+                className: "toastify-center",
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+            }).showToast();
+        }
+        else{
+            Toastify({
+                text: "Congrats! You will be notified soon!",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+            }).showToast();
+        }
+        
         submitButton.disabled = false
         form.reset();
 
