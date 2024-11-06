@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus One Coming Soon</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,14 +38,22 @@
             </from>
         </div>
         <div class="right">
-            <img src="./assets/hero-img.png" alt="campus One Home Page">
-            <!-- TODO: Create a new branch and try parallax with bg-attachment-fixed -->
+            <img src="./assets/hero-img.png" alt="campus One Home Page"
+                data-aos="fade-up"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-sine"
+            >
         </div>
     </section>
 
     <section class="intro container">
         <h2>This is an effort <span class="text-red">(a big one)</span> towards building a vibrant community of forward thinkers by recognizing talent, boosting collaboration and generating true college culture. </h2>
-        <h1 class="special second">3rdDecemeber</h1>
+        <h1 class="special second" 
+            data-aos="slide-left" 
+            data-aos-duration="1000" 
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+        >3rdDecemeber</h1>
     </section>
 
     <section class="container" id="features">
@@ -87,7 +96,11 @@
             <h3>Visit interesting profiles</h3>
             <p>Book of the month because why not? Every month you get a book recommendation by the admins and you can keep track of your reading status</p>
         </div>
-        <img src="/assets/Profile.png" alt="Profile">
+        <img src="/assets/Profile.png" alt="Profile"
+            data-aos="zoom-in-up"
+            data-aos-delay="200"
+            data-aos-mirror="true"
+        >
         <div class="more">
             <h3>Some more features...</h3>
             <p class="capsule">XP Points</p>
@@ -117,6 +130,10 @@
 
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="script.js"></script>
 
 </body>
