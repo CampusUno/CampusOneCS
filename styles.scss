@@ -100,10 +100,13 @@ h1.first{
 
 .intro {
     padding-block: 20rem;
-    display: flex;
-    justify-content: center;
+    padding-bottom: 10rem;
     @include mobile{
         padding-block: 14rem;
+    }
+    .flex{
+        display: flex;
+        justify-content: center;
     }
     h2{
         width: 50%;
@@ -119,6 +122,7 @@ h1.first{
         }
     }
 }
+/*
 h1.second{
     position: absolute;
     left: 5%;
@@ -128,7 +132,7 @@ h1.second{
         font-size: 10rem;
     }
 }
-
+*/
 
 
 #features{
