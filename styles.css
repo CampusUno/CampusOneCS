@@ -61,9 +61,19 @@ button {
   outline: none;
 }
 
+@property --myColor1 {
+  syntax: "<color>";
+  initial-value: rgba(217, 217, 217, 0.1);
+  inherits: false;
+}
+@property --myColor2 {
+  syntax: "<color>";
+  initial-value: rgba(217, 217, 217, 0.15);
+  inherits: false;
+}
 .btn-primary {
   padding: 1rem 2rem;
-  background: rgba(217, 217, 217, 0.1);
+  background: linear-gradient(90deg, var(--myColor1), var(--myColor2));
   border-radius: 2rem;
   font-size: 1rem;
   color: #fff;
@@ -72,10 +82,11 @@ button {
   box-sizing: unset;
   display: flex;
   justify-content: space-between;
-  transition: 500ms background-color linear;
+  transition: --myColor1 0.3s ease-in-out, --myColor2 0.3s ease-in-out;
 }
-.btn-primary:hover {
-  background: linear-gradient(90deg, #4D041B, #940432);
+.btn-primary:hover, .btn-primary:focus {
+  --myColor1: #4D041B;
+  --myColor2: #940432;
 }
 
 .btn-secondary {

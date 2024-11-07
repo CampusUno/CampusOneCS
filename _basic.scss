@@ -82,9 +82,22 @@ button{
     outline: none;
 }
 
+//Workaround to make the gradient background transition work
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: rgba($color: #D9D9D9, $alpha: 0.1);
+    inherits: false;
+}
+  
+  @property --myColor2 {
+    syntax: '<color>';
+    initial-value: rgba($color: #D9D9D9, $alpha: 0.15);
+    inherits: false;
+  }
+
 .btn-primary{
     padding: 1rem 2rem;
-    background: rgba($color: #D9D9D9, $alpha: 0.1);
+    background: linear-gradient(90deg, var(--myColor1), var(--myColor2)); //Workaround
     border-radius: 2rem;
     font-size: 1rem;
     color: #fff;
@@ -93,10 +106,10 @@ button{
     box-sizing: unset;
     display: flex;
     justify-content: space-between;
-    transition: 500ms background-color linear;
-    &:hover{
-        background: linear-gradient(90deg, $primary-dark, $primary-light);
-        
+    transition: --myColor1 0.3s ease-in-out, --myColor2 0.3s ease-in-out; //Workaround
+    &:hover, &:focus{
+        --myColor1: #4D041B;    //Workaround
+        --myColor2: #940432;    //Workaround
     }
 }
 
